@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Etch-a-Sketch</title>
+    <link href="css/style.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <h1>Etch-a-Sketch</h1>
+    <div class="sketch-container">
+      <div class="left-settings">
+        <input type="color" name="color" id="color" class="color-picker" />
+        <button class="rainbow-button btn">
+          <span class="material-symbols-outlined"> looks </span>
+        </button>
+      </div>
+      <div class="sketch-grid"></div>
+      <div class="right-settings">
+        <button class="eraser-button btn">
+          <span class="material-symbols-outlined"> ink_eraser </span>
+        </button>
+        <button class="clear-button btn">
+          <span class="material-symbols-outlined"> close </span>
+        </button>
+      </div>
+      <div class="slider-container">
+        <input type="range" name="grid-size" id="grid-size" class="slider" />
+      </div>
+    </div>
+  </body>
+</html>
