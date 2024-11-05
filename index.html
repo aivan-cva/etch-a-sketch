@@ -29,9 +29,24 @@
         <button class="clear-button btn">
           <span class="material-symbols-outlined"> close </span>
         </button>
+        <button class="darken-button btn">
+          <span class="material-symbols-outlined"> brightness_6 </span>
+        </button>
       </div>
       <div class="slider-container">
-        <input type="range" name="grid-size" id="grid-size" class="slider" />
+        <span class="slider-value">1 x 1</span>
+        <input
+          type="range"
+          name="grid-size"
+          id="grid-size"
+          class="slider"
+          min="1"
+          max="64"
+          value="1"
+        />
+        <button class="apply-grid btn">
+          <span class="material-symbols-outlined"> autorenew </span>
+        </button>
       </div>
     </div>
   </body>
