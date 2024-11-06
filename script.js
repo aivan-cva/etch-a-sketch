@@ -47,18 +47,21 @@ const grid_color = (color_val = "#000", rainbowColor = false, dark = false) => {
   const pixels = document.querySelectorAll(".pixel");
 
   pixels.forEach((pixel) => {
-    if (dark) {
-      pixel.style.opacity = 0;
+    pixel.style.opacity = 1;
+    if (dark == true) {
+      pixel.style.opacity = 0.1;
     }
+
     pixel.addEventListener("mouseenter", () => {
       if (rainbowColor) {
-        pixel.style.opacity = 1;
         color_val = `#${genRanHex(6)}`;
       }
 
       if (dark) {
-        console.log(pixel.style.opacity, pixel.style.backgroundColor);
-        pixel.style.opacity += 0.1;
+        let op = Number(pixel.style.opacity);
+        if (op < 1) {
+          pixel.style.opacity = `${op + 0.1}`;
+        }
       }
 
       pixel.style.backgroundColor = color_val;
@@ -92,6 +95,8 @@ eraser.addEventListener("click", (e) => {
 });
 
 darken.addEventListener("click", (e) => {
+  clear_grid();
+  generate_grid(slider.value);
   grid_color("#000", false, true);
 });
 
@@ -99,6 +104,7 @@ clear.addEventListener("click", (e) => {
   clear_grid();
   generate_grid(slider.value);
 });
+
 slider.value = 2;
 slider_value.textContent = `${slider.value} x ${slider.value}`;
 generate_grid(slider.value);
